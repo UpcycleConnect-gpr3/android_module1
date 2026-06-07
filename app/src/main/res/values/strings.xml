@@ -33,6 +33,11 @@
     <string name="subscriptions_notifications_title">Gerer mes notifications</string>
     <string name="subscriptions_notifications_action">Voir</string>
 
+    <!-- Abonnement en cours -->
+    <string name="active_plan_name">Basic plan</string>
+    <string name="active_plan_price">0€</string>
+    <string name="active_plan_change">Changer d\'abonnements</string>
+
     <!-- Bottom navigation -->
     <string name="nav_download">Télécharger</string>
     <string name="nav_home">Accueil</string>
