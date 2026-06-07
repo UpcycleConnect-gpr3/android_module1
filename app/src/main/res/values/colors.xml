@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Palette -->
+    <color name="primary">#00433D</color>
+    <color name="secondary">#D8FF4F</color>
+    <color name="tertiary">#F5F5F5</color>
+
+    <!-- Texte d'aide (placeholder) : primary atténué -->
+    <color name="hint">#8000433D</color>
 </resources>
