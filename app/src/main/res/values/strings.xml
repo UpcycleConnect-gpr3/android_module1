@@ -23,6 +23,16 @@
     <string name="home_parcel_title">Recuperer mon colis</string>
     <string name="home_parcel_action">Explorer</string>
 
+    <!-- Abonnements -->
+    <string name="subscriptions_active_title">Abonnements en cours</string>
+    <string name="subscriptions_active_action">Voir</string>
+
+    <string name="subscriptions_history_title">Historique</string>
+    <string name="subscriptions_history_action">Voir</string>
+
+    <string name="subscriptions_notifications_title">Gerer mes notifications</string>
+    <string name="subscriptions_notifications_action">Voir</string>
+
     <!-- Bottom navigation -->
     <string name="nav_download">Télécharger</string>
     <string name="nav_home">Accueil</string>

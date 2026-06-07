@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".HomeActivity">
+    tools:context=".SubscriptionsActivity">
 
     <!-- Header -->
     <TextView
@@ -43,9 +43,9 @@
             android:paddingHorizontal="20dp"
             android:paddingBottom="20dp">
 
-            <!-- Card: Gérer mes abonnements -->
+            <!-- Card: Abonnements en cours -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_subscriptions"
+                android:id="@+id/card_active"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -67,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/home_subscriptions_title"
+                        android:text="@string/subscriptions_active_title"
                         android:textColor="@color/primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -77,16 +77,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
                         android:gravity="center"
-                        android:text="@string/home_subscriptions_action"
+                        android:text="@string/subscriptions_active_action"
                         android:textColor="@color/primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Card: Trouvez votre annonces -->
+            <!-- Card: Historique -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_listings"
+                android:id="@+id/card_history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -108,7 +108,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/home_listings_title"
+                        android:text="@string/subscriptions_history_title"
                         android:textColor="@color/primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -118,16 +118,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
                         android:gravity="center"
-                        android:text="@string/home_listings_action"
+                        android:text="@string/subscriptions_history_action"
                         android:textColor="@color/primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Card: Recuperer mon colis -->
+            <!-- Card: Gerer mes notifications -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_parcel"
+                android:id="@+id/card_notifications"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -149,7 +149,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/home_parcel_title"
+                        android:text="@string/subscriptions_notifications_title"
                         android:textColor="@color/primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -159,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
                         android:gravity="center"
-                        android:text="@string/home_parcel_action"
+                        android:text="@string/subscriptions_notifications_action"
                         android:textColor="@color/primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
