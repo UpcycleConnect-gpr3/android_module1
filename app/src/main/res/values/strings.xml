@@ -10,4 +10,21 @@
     <string name="login_password_label">Password</string>
     <string name="login_password_hint">••••••••</string>
     <string name="login_submit">Se connecter</string>
+
+    <!-- Home -->
+    <string name="home_greeting">Bonjour, Gravityfall !</string>
+
+    <string name="home_subscriptions_title">Gérer mes abonnements</string>
+    <string name="home_subscriptions_action">Voir</string>
+
+    <string name="home_listings_title">Trouvez votre annonces</string>
+    <string name="home_listings_action">Explorer</string>
+
+    <string name="home_parcel_title">Recuperer mon colis</string>
+    <string name="home_parcel_action">Explorer</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_download">Télécharger</string>
+    <string name="nav_home">Accueil</string>
+    <string name="nav_upload">Partager</string>
 </resources>
