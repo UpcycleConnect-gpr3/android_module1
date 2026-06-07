@@ -90,7 +90,10 @@
                     android:id="@+id/switch_promos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false" />
+                    android:checked="false"
+                    app:thumbTint="@color/switch_thumb_tint"
+                    app:trackDecorationTint="@color/primary"
+                    app:trackTint="@color/switch_track_tint" />
             </LinearLayout>
 
             <!-- Rappels d'abonnement -->
@@ -113,7 +116,10 @@
                     android:id="@+id/switch_reminders"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true" />
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_tint"
+                    app:trackDecorationTint="@color/primary"
+                    app:trackTint="@color/switch_track_tint" />
             </LinearLayout>
 
             <!-- Nouveautés -->
@@ -136,7 +142,10 @@
                     android:id="@+id/switch_news"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false" />
+                    android:checked="false"
+                    app:thumbTint="@color/switch_thumb_tint"
+                    app:trackDecorationTint="@color/primary"
+                    app:trackTint="@color/switch_track_tint" />
             </LinearLayout>
 
             <!-- Alertes par email -->
@@ -159,7 +168,10 @@
                     android:id="@+id/switch_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true" />
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_tint"
+                    app:trackDecorationTint="@color/primary"
+                    app:trackTint="@color/switch_track_tint" />
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
