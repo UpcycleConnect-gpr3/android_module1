@@ -19,6 +19,8 @@ class SubscriptionsActivity : AppCompatActivity() {
             insets
         }
 
+        findViewById<View>(R.id.back_button).setOnClickListener { finish() }
+
         findViewById<View>(R.id.card_active).setOnClickListener {
             startActivity(Intent(this, ActivePlanActivity::class.java))
         }

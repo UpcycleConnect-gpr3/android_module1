@@ -51,6 +51,8 @@
     <string name="notifications_news">Nouveautés</string>
     <string name="notifications_email">Alertes par email</string>
 
+    <string name="nav_back">Retour</string>
+
     <!-- Bottom navigation -->
     <string name="nav_download">Télécharger</string>
     <string name="nav_home">Accueil</string>

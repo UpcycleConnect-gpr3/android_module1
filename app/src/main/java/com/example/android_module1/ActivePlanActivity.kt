@@ -19,6 +19,8 @@ class ActivePlanActivity : AppCompatActivity() {
             insets
         }
 
+        findViewById<View>(R.id.back_button).setOnClickListener { finish() }
+
         findViewById<View>(R.id.nav_home).setOnClickListener {
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
