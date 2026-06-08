@@ -53,6 +53,13 @@
 
     <string name="nav_back">Retour</string>
 
+    <!-- Colis -->
+    <string name="parcels_title">Mes colis</string>
+    <string name="parcels_location_label">Localisation</string>
+    <string name="parcels_code_label">Code de retrait</string>
+    <string name="parcels_qr_desc">QR code du colis</string>
+    <string name="parcels_empty">Aucun colis à récupérer pour le moment.</string>
+
     <!-- Bottom navigation -->
     <string name="nav_download">Télécharger</string>
     <string name="nav_home">Accueil</string>
