@@ -28,5 +28,8 @@ class HomeActivity : AppCompatActivity() {
         findViewById<View>(R.id.card_parcel).setOnClickListener {
             startActivity(Intent(this, ParcelsActivity::class.java))
         }
+        findViewById<View>(R.id.nav_settings).setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
     }
 }

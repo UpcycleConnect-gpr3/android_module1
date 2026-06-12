@@ -33,6 +33,9 @@ class ParcelsActivity : AppCompatActivity() {
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
+        findViewById<View>(R.id.nav_settings).setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
 
         // Données de test ; seront fournies par une API par la suite.
         renderParcels(Parcel.sampleData())

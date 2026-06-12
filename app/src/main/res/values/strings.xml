@@ -72,8 +72,19 @@
     <string name="parcels_qr_desc">QR code du colis</string>
     <string name="parcels_empty">Aucun colis à récupérer pour le moment.</string>
 
+    <!-- Paramètres -->
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_username_label">Nom d\'utilisateur</string>
+    <string name="settings_username_hint">Votre nom d\'utilisateur</string>
+    <string name="settings_password_label">Mot de passe</string>
+    <string name="settings_save">Enregistrer</string>
+    <string name="settings_saved">Modifications enregistrées</string>
+    <string name="settings_logout">Se déconnecter</string>
+    <string name="settings_sample_username">Gravityfall</string>
+    <string name="settings_sample_email">gravityfall@email.com</string>
+
     <!-- Bottom navigation -->
-    <string name="nav_download">Télécharger</string>
+    <string name="nav_settings">Paramètres</string>
     <string name="nav_home">Accueil</string>
     <string name="nav_upload">Partager</string>
 </resources>
