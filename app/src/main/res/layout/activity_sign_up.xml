@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".SignUpActivity">
 
-    <!-- Limite entre l'en-tête vert et le formulaire -->
+    <!-- Limite entre l'en-tête vert et le formulaire (plus petit que le login : 4 champs à caser) -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/header_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.32" />
 
     <!-- En-tête vert -->
     <View
@@ -28,13 +28,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/login_title"
+        android:id="@+id/signup_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/login_title"
+        android:text="@string/signup_title"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -42,48 +42,48 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/login_subtitle"
+        android:id="@+id/signup_subtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/login_subtitle"
+        android:text="@string/signup_subtitle"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_title" />
+        app:layout_constraintTop_toBottomOf="@id/signup_title" />
 
     <!-- Logo dans le cercle -->
     <FrameLayout
         android:id="@+id/logo_circle"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:background="@drawable/bg_login_circle"
         app:layout_constraintBottom_toTopOf="@id/header_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_subtitle">
+        app:layout_constraintTop_toBottomOf="@id/signup_subtitle">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:contentDescription="@string/login_logo_desc"
-            android:padding="36dp"
+            android:padding="22dp"
             android:src="@drawable/logo_upcycle" />
     </FrameLayout>
 
-    <!-- Champ Email -->
+    <!-- Champ Nom -->
     <TextView
-        android:id="@+id/email_label"
+        android:id="@+id/name_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/login_email_label"
+        android:text="@string/signup_name_label"
         android:textColor="@color/primary"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -92,18 +92,53 @@
         app:layout_constraintTop_toBottomOf="@id/header_guideline" />
 
     <EditText
+        android:id="@+id/name_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="name"
+        android:background="@drawable/bg_input"
+        android:hint="@string/signup_name_hint"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_label" />
+
+    <!-- Champ Email -->
+    <TextView
+        android:id="@+id/email_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/login_email_label"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_input" />
+
+    <EditText
         android:id="@+id/email_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="emailAddress"
         android:background="@drawable/bg_input"
         android:hint="@string/login_email_hint"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        android:padding="14dp"
+        android:padding="12dp"
         android:textColor="@color/primary"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +151,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
         android:text="@string/login_password_label"
         android:textColor="@color/primary"
@@ -131,53 +166,88 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="20dp"
-        android:autofillHints="password"
+        android:autofillHints="newPassword"
         android:background="@drawable/bg_input"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:padding="14dp"
+        android:padding="12dp"
         android:textColor="@color/primary"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_label" />
 
-    <!-- Bouton Se connecter -->
+    <!-- Champ Confirmation -->
+    <TextView
+        android:id="@+id/confirm_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/signup_confirm_label"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_input" />
+
+    <EditText
+        android:id="@+id/confirm_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="newPassword"
+        android:background="@drawable/bg_input"
+        android:hint="@string/login_password_hint"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirm_label" />
+
+    <!-- Bouton S'inscrire -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_submit"
+        android:id="@+id/signup_submit"
         style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/login_submit"
+        android:text="@string/signup_submit"
         android:textColor="@color/primary"
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_input"
+        app:layout_constraintTop_toBottomOf="@id/confirm_input"
         app:strokeColor="@color/primary"
         app:strokeWidth="1dp" />
 
-    <!-- Lien vers l'inscription -->
+    <!-- Lien vers le login -->
     <TextView
-        android:id="@+id/login_signup_link"
+        android:id="@+id/signup_login_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:background="?attr/selectableItemBackground"
         android:padding="8dp"
-        android:text="@string/login_signup_link"
+        android:text="@string/signup_login_link"
         android:textColor="@color/primary"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_submit" />
+        app:layout_constraintTop_toBottomOf="@id/signup_submit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

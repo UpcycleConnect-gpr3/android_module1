@@ -10,6 +10,16 @@
     <string name="login_password_label">Password</string>
     <string name="login_password_hint">••••••••</string>
     <string name="login_submit">Se connecter</string>
+    <string name="login_signup_link">Pas encore de compte ? S\'inscrire</string>
+
+    <!-- Sign up -->
+    <string name="signup_title">Créer un compte</string>
+    <string name="signup_subtitle">Rejoignez Upcycle Connect</string>
+    <string name="signup_name_label">Nom</string>
+    <string name="signup_name_hint">Votre nom</string>
+    <string name="signup_confirm_label">Confirmer le mot de passe</string>
+    <string name="signup_submit">S\'inscrire</string>
+    <string name="signup_login_link">Déjà un compte ? Se connecter</string>
 
     <!-- Home -->
     <string name="home_greeting">Bonjour, Gravityfall !</string>
