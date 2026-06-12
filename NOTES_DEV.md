@@ -26,6 +26,24 @@ données par la réponse réseau, **sans toucher au rendu**.
 > `lifecycleScope`) puis mettre à jour l'UI. Prévoir Retrofit + coroutines
 > (cf. `android_module2` qui a déjà cette config dans son `build.gradle.kts`).
 
+### Annonces (`ListingsActivity` + `ListingDetailActivity`)
+
+- Données de test : `Listing.sampleData()` dans `data/Listing.kt`.
+- **Pour brancher l'API** :
+  - liste : remplacer l'appel `Listing.sampleData()` dans
+    `ListingsActivity.onCreate(...)` par la réponse réseau (liste de
+    `Listing`), sans toucher au rendu (`renderListings`) ;
+  - détail : remplacer `Listing.findById(...)` dans
+    `ListingDetailActivity.onCreate(...)` par un appel API (l'id de l'annonce
+    est passé via l'extra `EXTRA_LISTING_ID`).
+- Modèle `Listing` : `id`, `title`, `description`, `price`, `condition`,
+  `location`, `seller`, `publishedDate`.
+- Cas liste vide déjà géré (`listings_empty`).
+- **Photo de l'annonce** : l'écran de détail affiche pour l'instant une image
+  générique (`img_listing_placeholder`). Quand l'API fournira une URL d'image,
+  ajouter un champ `imageUrl` au modèle et une lib de chargement (Coil ou
+  Glide) pour remplir `detail_image`.
+
 ### Autres écrans à brancher (actuellement statiques)
 
 | Écran                | Activité                | Données en dur à remplacer                            |
@@ -33,6 +51,7 @@ données par la réponse réseau, **sans toucher au rendu**.
 | Abonnement en cours  | `ActivePlanActivity`    | `active_plan_name`, `active_plan_price` (strings)     |
 | Historique           | `HistoryActivity`       | `history_date_1/2/3` (strings)                        |
 | Notifications        | `NotificationsActivity` | état des 4 interrupteurs (aucun stockage)            |
+| Paramètres           | `SettingsActivity`      | `settings_sample_username`, `settings_sample_email` (strings) |
 
 > Idéalement, créer un modèle dédié par écran (ex. `Subscription`, `Invoice`,
 > `NotificationSetting`) sur le modèle de `Parcel`, avec une méthode de données
@@ -47,9 +66,9 @@ Ces éléments sont affichés mais **ne déclenchent encore aucune action** :
 - **Login** (`MainActivity`) : le bouton « Se connecter » ne valide rien, il
   ouvre directement l'accueil. → Ajouter la vérification email/mot de passe
   (via API d'authentification).
-- **Accueil** (`HomeActivity`) : la carte « Trouvez votre annonces »
-  (`card_listings`) n'est branchée sur rien. (« Gérer mes abonnements » et
-  « Recuperer mon colis » sont branchées.)
+- **Annonces** : le bouton « Contacter le vendeur » du détail affiche seulement
+  un toast (`listing_contact_soon`) ; la mise en relation (messagerie/API)
+  reste à brancher.
 - **Abonnement en cours** : le bouton « Changer d'abonnements » (`change_plan`)
   n'a pas d'action.
 - **Historique** : les liens « Télécharger » de chaque facture n'ont pas
@@ -58,9 +77,12 @@ Ces éléments sont affichés mais **ne déclenchent encore aucune action** :
   relié à aucun backend.
 - **Colis** : le QR est affiché mais non interactif (pas de scan ni d'action au
   clic).
-- **Barre de navigation** : seul le bouton central « Accueil » (`nav_home`)
-  agit (retour à l'accueil). Les icônes gauche (`nav_download`) et droite
-  (`nav_upload`) n'ont pas d'action.
+- **Paramètres** : « Enregistrer » affiche seulement un toast (`settings_saved`),
+  rien n'est persisté ni envoyé à une API. « Se déconnecter » revient au login
+  sans invalider de session (pas encore de session réelle).
+- **Barre de navigation** : le bouton central « Accueil » (`nav_home`) ramène à
+  l'accueil et l'engrenage gauche (`nav_settings`) ouvre les paramètres. Seule
+  l'icône droite (`nav_upload`) n'a pas d'action.
 
 ---
 
@@ -73,12 +95,18 @@ Login (MainActivity)
         │      ├─ « Abonnements en cours »  ─> ActivePlanActivity
         │      ├─ « Historique »            ─> HistoryActivity
         │      └─ « Gerer mes notifications»─> NotificationsActivity
-        ├─ carte « Trouvez votre annonces » ─> (non branchée)
-        └─ carte « Recuperer mon colis »    ─> Mes colis (ParcelsActivity)
+        ├─ carte « Trouvez votre annonces » ─> Les annonces (ListingsActivity)
+        │      └─ clic sur une annonce ─> Détail (ListingDetailActivity)
+        ├─ carte « Recuperer mon colis »    ─> Mes colis (ParcelsActivity)
+        └─ engrenage de la nav bar          ─> Paramètres (SettingsActivity)
+              └─ « Se déconnecter » ─> retour au Login (pile vidée)
 ```
 
-- Flèche retour (`back_button`) présente sur les sous-écrans des abonnements et
-  sur l'écran colis → `finish()`.
+- L'engrenage (`nav_settings`) est présent sur **tous** les écrans à nav bar et
+  ouvre les paramètres.
+
+- Flèche retour (`back_button`) présente sur les sous-écrans des abonnements,
+  sur l'écran annonces et sur l'écran colis → `finish()`.
 - L'accueil n'a **pas** de flèche retour (c'est le hub principal).
 
 ---
