@@ -30,6 +30,12 @@
             android:name=".ParcelsActivity"
             android:exported="false" />
         <activity
+            android:name=".ListingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListingDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

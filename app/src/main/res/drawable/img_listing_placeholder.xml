@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Image générique d'annonce (paysage stylisé), en attendant les photos de l'API. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="240dp"
+    android:viewportWidth="400"
+    android:viewportHeight="240">
+    <path
+        android:fillColor="@color/tertiary"
+        android:pathData="M0,0h400v240h-400z" />
+    <path
+        android:fillColor="@color/secondary"
+        android:pathData="M310,58m-26,0a26,26 0,1 1,52 0a26,26 0,1 1,-52 0" />
+    <path
+        android:fillColor="@color/primary"
+        android:pathData="M0,240L120,96L220,200L280,140L400,240Z" />
+</vector>

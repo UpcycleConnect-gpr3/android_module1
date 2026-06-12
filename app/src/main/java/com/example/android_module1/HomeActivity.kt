@@ -22,6 +22,9 @@ class HomeActivity : AppCompatActivity() {
         findViewById<View>(R.id.card_subscriptions).setOnClickListener {
             startActivity(Intent(this, SubscriptionsActivity::class.java))
         }
+        findViewById<View>(R.id.card_listings).setOnClickListener {
+            startActivity(Intent(this, ListingsActivity::class.java))
+        }
         findViewById<View>(R.id.card_parcel).setOnClickListener {
             startActivity(Intent(this, ParcelsActivity::class.java))
         }

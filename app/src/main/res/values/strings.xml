@@ -53,6 +53,18 @@
 
     <string name="nav_back">Retour</string>
 
+    <!-- Annonces -->
+    <string name="listings_title">Les annonces</string>
+    <string name="listings_condition_label">État</string>
+    <string name="listings_location_label">Localisation</string>
+    <string name="listings_empty">Aucune annonce disponible pour le moment.</string>
+    <string name="listings_description_label">Description</string>
+    <string name="listings_seller_label">Vendeur</string>
+    <string name="listings_date_label">Publiée le</string>
+    <string name="listings_image_desc">Photo de l\'annonce</string>
+    <string name="listing_contact">Contacter le vendeur</string>
+    <string name="listing_contact_soon">Mise en relation bientôt disponible</string>
+
     <!-- Colis -->
     <string name="parcels_title">Mes colis</string>
     <string name="parcels_location_label">Localisation</string>
