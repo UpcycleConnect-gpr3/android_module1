@@ -84,6 +84,7 @@
     <string name="parcels_code_label">Code de retrait</string>
     <string name="parcels_qr_desc">QR code du colis</string>
     <string name="parcels_empty">Aucun colis à récupérer pour le moment.</string>
+    <string name="parcels_error">Impossible de charger les colis.</string>
 
     <!-- Paramètres -->
     <string name="settings_title">Paramètres</string>

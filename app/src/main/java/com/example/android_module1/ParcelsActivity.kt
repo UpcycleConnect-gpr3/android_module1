@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.android_module1.data.Parcel
+import com.example.android_module1.data.ParcelApi
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.MultiFormatWriter
@@ -37,8 +38,21 @@ class ParcelsActivity : AppCompatActivity() {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
 
-        // Données de test ; seront fournies par une API par la suite.
-        renderParcels(Parcel.sampleData())
+        loadParcels()
+    }
+
+    /** Récupère les colis depuis le backend Go (hors thread principal). */
+    private fun loadParcels() {
+        showMessage(getString(R.string.loading))
+        Thread {
+            val result = ParcelApi.fetchAll()
+            runOnUiThread {
+                when (result) {
+                    is ParcelApi.Result.Success -> renderParcels(result.data)
+                    is ParcelApi.Result.Error -> showMessage(getString(R.string.parcels_error))
+                }
+            }
+        }.start()
     }
 
     private fun renderParcels(parcels: List<Parcel>) {
@@ -46,12 +60,7 @@ class ParcelsActivity : AppCompatActivity() {
         container.removeAllViews()
 
         if (parcels.isEmpty()) {
-            val empty = TextView(this).apply {
-                text = getString(R.string.parcels_empty)
-                setTextColor(getColor(R.color.primary))
-                textSize = 14f
-            }
-            container.addView(empty)
+            showMessage(getString(R.string.parcels_empty))
             return
         }
 
@@ -61,10 +70,26 @@ class ParcelsActivity : AppCompatActivity() {
             card.findViewById<TextView>(R.id.parcel_title).text = parcel.title
             card.findViewById<TextView>(R.id.parcel_location).text = parcel.location
             card.findViewById<TextView>(R.id.parcel_code).text = parcel.pickupCode
-            card.findViewById<ImageView>(R.id.parcel_qr)
-                .setImageBitmap(generateQrCode(parcel.pickupCode, qrSizePx))
+            val qr = card.findViewById<ImageView>(R.id.parcel_qr)
+            if (parcel.pickupCode.isNotBlank()) {
+                qr.setImageBitmap(generateQrCode(parcel.pickupCode, qrSizePx))
+            } else {
+                qr.setImageDrawable(null)
+            }
             container.addView(card)
         }
+    }
+
+    /** Affiche un message simple (chargement, vide ou erreur) à la place de la liste. */
+    private fun showMessage(message: String) {
+        val container = findViewById<LinearLayout>(R.id.parcels_container)
+        container.removeAllViews()
+        val view = TextView(this).apply {
+            text = message
+            setTextColor(getColor(R.color.primary))
+            textSize = 14f
+        }
+        container.addView(view)
     }
 
     /** Génère un QR code (noir sur blanc) à partir d'un contenu texte. */
