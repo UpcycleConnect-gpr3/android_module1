@@ -106,7 +106,7 @@
                 android:textSize="14sp"
                 tools:text="Commode en pin des années 70, poncée et repeinte à la main." />
 
-            <!-- État + localisation -->
+            <!-- Indice éco + quantité -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,19 +123,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/listings_condition_label"
+                        android:text="@string/listings_score_label"
                         android:textColor="@color/primary"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/detail_condition"
+                        android:id="@+id/detail_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:textColor="@color/primary"
                         android:textSize="14sp"
-                        tools:text="Très bon état" />
+                        tools:text="4,5" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -147,78 +147,40 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/listings_location_label"
+                        android:text="@string/listings_quantity_label"
                         android:textColor="@color/primary"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/detail_location"
+                        android:id="@+id/detail_quantity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:textColor="@color/primary"
                         android:textSize="14sp"
-                        tools:text="Paris 11e" />
+                        tools:text="1" />
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Vendeur + date de publication -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <!-- Date de publication -->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:baselineAligned="false"
-                android:orientation="horizontal">
+                android:text="@string/listings_date_label"
+                android:textColor="@color/primary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/listings_seller_label"
-                        android:textColor="@color/primary"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/detail_seller"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:textColor="@color/primary"
-                        android:textSize="14sp"
-                        tools:text="Atelier Renouveau" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/listings_date_label"
-                        android:textColor="@color/primary"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/detail_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:textColor="@color/primary"
-                        android:textSize="14sp"
-                        tools:text="02-06-2026" />
-                </LinearLayout>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/detail_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/primary"
+                android:textSize="14sp"
+                tools:text="02-06-2026" />
 
             <!-- Bouton Contacter le vendeur -->
             <com.google.android.material.button.MaterialButton
